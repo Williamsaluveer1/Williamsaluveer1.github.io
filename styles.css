@@ -1,0 +1,518 @@
+/* Lägger till marginal för att kompensera för den fasta menyn */
+body {
+    margin-left: 220px; /* Justera baserat på menyens nya bredd */
+    font-family: 'Libre Baskerville', serif;
+    font-size: 14px; /* Minska bastextstorleken */
+}
+
+/* Desktop version: Menyn är fastklistrad på vänster sida */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px; /* Standardbredd för större skärmar */
+    height: 100%;
+    background-color: #fff;
+    padding: 15px;
+    box-sizing: border-box;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Stil för logotypen */
+.logo {
+    margin-bottom: 30px; /* Skapa avstånd mellan logotypen och länkarna */
+}
+/* Stil för logotypen, med Jüri och Salu på separata rader */
+.logo h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 34px; /* Minska storleken för att få ett renare utseende */
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.logo h1 span {
+    display: block; /* Tvingar varje ord till en ny rad */
+}
+
+/* Lägger till flexbox på hela menyn så att sociala länkar och språkväxling är i linje */
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px; /* Skapar utrymme mellan länkar och sociala ikoner */
+}
+
+/* Stil för navigationslänkar */
+nav ul li {
+    margin-bottom: 20px; /* Mellanrum mellan länkarna */
+}
+
+
+/* Standardstil för alla länkar */
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 16px;
+    color: black;
+    position: relative;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+/* Efter-effekt för streck under länkar */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: black;
+    left: 0;
+    bottom: 0;
+    transition: width 0.5s ease;
+}
+
+/* När en länk hovras, växer strecket från höger till vänster, men inte för aktiva länkar */
+nav ul li a:hover:not(.active)::after,
+nav ul li a:focus:not(.active)::after {
+    width: 100%; /* Strecket växer vid hover eller fokus */
+}
+
+/* Stil för den aktiva länken - inget händer vid hover */
+nav ul li a.active {
+    border-bottom: 1px solid black; /* Aktiv länk har ett fast streck */
+}
+
+/* Förhindra att hover-effekten körs på aktiva länkar */
+nav ul li a.active:hover::after {
+    width: 0; /* Strecket ska inte animera på den aktiva länken */
+}
+
+#galleri {
+    text-align: center; /* Centrerar texten inom gallerisektionen */
+}
+
+/* Stil för gallerirubriken */
+.gallery-heading {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    padding-left: 10px;
+    padding-top: 30px;
+}
+
+.gallery-heading-123 {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    padding-left: 10px;
+}
+
+.gallery-subheading {
+    font-size: 25px;
+    text-align: left;
+    color: #333;
+    padding-left: 25px;
+    padding-top: 25px;
+}
+
+.subheading-text {
+    font-size: 12px;
+    text-align: left;
+    color: #333;
+    padding-left: 25px;
+}
+
+/* Galleri-container */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 20px;
+    box-sizing: border-box;
+    
+}
+
+/* Stil för varje galleriobjekt */
+.gallery-item {
+    overflow: hidden;
+    border: none;
+}
+
+/* Bilden i galleriet */
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    box-sizing: border-box; /* Se till att border inkluderas i bildens totala storlek */
+    border: 1px solid #cccccc; /* Lägger till en ljusgrå ram runt bilden */
+    border-radius: 0px; /* Rundar hörnen för en mjukare look */
+    transition: border-color 0.3s ease-in-out; /* Transition för att göra ramens färg dynamisk */
+
+ 
+
+}
+
+
+/* Stil för galleriinfon (underrubrik och datum) */
+.gallery-info {
+    padding: 10px 0;
+    text-align: left; /* Vänsterjusterad text */
+}
+
+.gallery-subtitle {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #000; /* Svart färg för att ge underrubriken mer fokus */
+    font-weight: bold;
+}
+
+.gallery-date {
+    font-size: 14px;
+    color: #666; /* Ljusare grå färg för datum */
+    margin: 3px 0;
+    font-style: italic; /* Kursiv stil för datumet */
+
+}
+
+/* Anpassning för mindre skärmar */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .gallery-subtitle {
+        font-size: 16px;
+    }
+
+    .gallery-date {
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+/* Stil för linjen ovanför Vernissage-sektionen med extra utrymme */
+.section-divider {
+    width: 80%; /* Gör linjen smalare för att ge utrymme på båda sidor */
+    height: 1.5px;
+    background-color: #000; /* Svart linje */
+    margin: 40px auto; /* Centrerar linjen och ger utrymme ovanför och nedanför */
+    margin-left: 10%; /* Skapar utrymme till vänster */
+    margin-right: 10%; /* Skapar utrymme till höger */
+}
+
+
+/* Footer ska alltid vara längst ner */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Stil för modalen */
+.modal {
+    display: none; /* Dold som standard */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Mörk bakgrund med transparens */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+
+
+
+/* Kontaktsektion */
+#contact-section {
+    max-width: 600px;
+    margin: 80px auto;
+    padding-left: 20px;  /* Extra utrymme till vänster */
+    padding-right: 40px; /* Extra utrymme till höger för att kompensera för menyn */
+}
+
+h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+/* Kontaktinformation */
+.contact-info {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #333;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Kontaktformulär */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.contact-form button {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    #contact-section {
+        padding-left: 10px;  /* Justera för små skärmar */
+        padding-right: 40px; /* Justera för små skärmar med vänsterställd meny */
+    }
+}
+
+/* För mindre skärmar, täcker menyn 1/4 av skärmens bredd */
+@media (max-width: 768px) {
+    header {
+        width: 25vw; /* 1/4 av skärmens bredd */
+    }
+
+    body {
+        margin-left: 25vw; /* Justera innehållet baserat på menybredden */
+    }
+}
+
+/* Anpassar för ännu mindre skärmar om det behövs */
+@media (max-width: 480px) {
+    header {
+        width: 25vw; /* Behåll 1/4 av skärmens bredd även på mindre mobila enheter */
+    }
+
+    body {
+        margin-left: 25vw; /* Justera innehållet för den smalare menyn */
+    }
+}
+
+/* Vernissage-sektion */
+#vernissage {
+    padding: 50px 20px; /* Standard padding för större skärmar */
+    margin-left: 20px; /* Utrymme till vänster för menyn */
+    box-sizing: border-box;
+}
+
+.left-column {
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Stil för kartan */
+.map-container {
+    padding-left: 10px;
+    padding-right: 20px;
+    margin-top: 20px;
+}
+
+/* För mindre skärmar: vernissage med utrymme till höger och vänster */
+@media (max-width: 768px) {
+    #vernissage {
+        padding-left: 10px; /* Utrymme till vänster */
+        padding-right: 1vw; /* Utrymme till höger för att matcha menyns bredd */
+        margin-left: 0; /* Justera för mobila skärmar */
+    }
+}
+
+@media (max-width: 480px) {
+    #vernissage {
+        padding-left: 10px;
+        padding-right: 1vw; /* Anpassa för mindre skärmar med utrymme för menyn */
+        margin-left: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+
+/* Om-sektion */
+/* Huvudinnehållet ska ta upp så mycket plats som möjligt */
+#about {
+    flex: 1;
+    padding: 50px 20px;
+    text-align: center;
+    min-height: calc(100vh - 200px); /* Kalkylera höjden minus footerns höjd och margin */
+
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-image {
+    margin-bottom: 20px;
+}
+
+.juri-image {
+    width: 150px; /* Gör bilden mindre */
+    height: auto;
+    border-radius: 50%; /* Gör bilden rundad */
+    border: 3px solid #ddd; /* Lägger till en subtil ram */
+    filter: grayscale(100%); /* Gör bilden helt svartvit */
+}
+
+.about-text {
+    font-size: 18px;
+    color: #555;
+}
+
+.about-text h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Responsivitet för mindre skärmar */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 20px;
+    }
+
+    .juri-image {
+        width: 120px; /* Minska bilden ytterligare för små skärmar */
+    }
+}
+
+/* Innehåll som expanderar för att fylla upp sidan */
+#content {
+    flex: 1; /* Gör så att innehållet expanderar och fyller utrymme mellan header och footer */
+}
+
+/* Footer som klistras längst ned */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Stil för gallerirubriken */
+.vernissage-heading {
+    font-size: 52px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    padding-left: 10px;
+    padding-top: 15px;
+}
+
+.vernissage-heading-p {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 7px;
+    color: #4a4a4a;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+.vernissage-heading-p2 {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 7px;
+    color: #4a4a4a;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+.artal {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+    padding-left: 10px;
+    font-weight: bold;
+}
