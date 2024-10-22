@@ -1,8 +1,8 @@
-/* Lägger till marginal för att kompensera för den fasta menyn */
+/* Lägger till margin för att kompensera för den fasta menyn */
 body {
-    margin-left: 220px; /* Justera baserat på menyens nya bredd */
+    margin-left: 180px; /* Minskar bredden för marginalen */
     font-family: 'Libre Baskerville', serif;
-    font-size: 14px; /* Minska bastextstorleken */
+    font-size: 12px; /* Mindre bastextstorlek */
 }
 
 /* Desktop version: Menyn är fastklistrad på vänster sida */
@@ -10,10 +10,10 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 200px; /* Standardbredd för större skärmar */
+    width: 160px; /* Minskar bredden för menyn */
     height: 100%;
     background-color: #fff;
-    padding: 15px;
+    padding: 10px; /* Minskar padding */
     box-sizing: border-box;
     border-right: 1px solid #ddd;
     display: flex;
@@ -23,12 +23,12 @@ header {
 
 /* Stil för logotypen */
 .logo {
-    margin-bottom: 30px; /* Skapa avstånd mellan logotypen och länkarna */
+    margin-bottom: 20px; /* Mindre mellanrum mellan logotypen och länkarna */
 }
 /* Stil för logotypen, med Jüri och Salu på separata rader */
 .logo h1 {
     font-family: 'Libre Baskerville', serif;
-    font-size: 34px; /* Minska storleken för att få ett renare utseende */
+    font-size: 28px; /* Minskar storleken på logotyptexten */
     font-weight: bold;
     text-align: center;
     line-height: 1.1;
@@ -48,12 +48,12 @@ nav {
 nav ul {
     list-style-type: none;
     padding: 0;
-    margin-bottom: 20px; /* Skapar utrymme mellan länkar och sociala ikoner */
+    margin-bottom: 15px; /* Minskar utrymme mellan länkar och sociala ikoner */
 }
 
 /* Stil för navigationslänkar */
 nav ul li {
-    margin-bottom: 20px; /* Mellanrum mellan länkarna */
+    margin-bottom: 15px; /* Minskar mellanrum mellan länkarna */
 }
 
 
@@ -61,10 +61,10 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     font-family: 'Libre Baskerville', serif;
-    font-size: 16px;
+    font-size: 14px; /* Mindre länkstorlek */
     color: black;
     position: relative;
-    padding-bottom: 5px;
+    padding-bottom: 4px; /* Mindre padding under länkarna */
     display: inline-block;
 }
 
@@ -102,45 +102,44 @@ nav ul li a.active:hover::after {
 
 /* Stil för gallerirubriken */
 .gallery-heading {
-    font-size: 25px;
+    font-size: 20px; /* Mindre rubrikstorlek */
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #333;
-    padding-left: 10px;
-    padding-top: 30px;
+    padding-left: 8px;
+    padding-top: 20px;
 }
 
 .gallery-heading-123 {
-    font-size: 25px;
+    font-size: 20px; /* Mindre rubrikstorlek */
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #333;
-    padding-left: 10px;
+    padding-left: 8px;
 }
 
 .gallery-subheading {
-    font-size: 25px;
+    font-size: 20px; /* Mindre underrubrik */
     text-align: left;
     color: #333;
-    padding-left: 25px;
-    padding-top: 25px;
+    padding-left: 20px;
+    padding-top: 20px;
 }
 
 .subheading-text {
-    font-size: 12px;
+    font-size: 10px; /* Mindre textstorlek */
     text-align: left;
     color: #333;
-    padding-left: 25px;
+    padding-left: 20px;
 }
 
 /* Galleri-container */
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 40px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Minskar minsta kolumnbredd */
+    gap: 30px; /* Minskar gap mellan galleriobjekt */
+    padding: 15px; /* Minskar padding */
     box-sizing: border-box;
-    
 }
 
 /* Stil för varje galleriobjekt */
@@ -156,77 +155,141 @@ nav ul li a.active:hover::after {
     display: block;
     object-fit: cover;
     box-sizing: border-box; /* Se till att border inkluderas i bildens totala storlek */
-    border: 1px solid #cccccc; /* Lägger till en ljusgrå ram runt bilden */
+    border: 1px solid #cccccc; /* Ljusgrå ram runt bilden */
     border-radius: 0px; /* Rundar hörnen för en mjukare look */
     transition: border-color 0.3s ease-in-out; /* Transition för att göra ramens färg dynamisk */
-
- 
-
 }
-
 
 /* Stil för galleriinfon (underrubrik och datum) */
 .gallery-info {
-    padding: 10px 0;
+    padding: 8px 0; /* Minskar padding runt galleriinfo */
     text-align: left; /* Vänsterjusterad text */
 }
 
 .gallery-subtitle {
-    font-size: 18px;
-    margin: 5px 0;
-    color: #000; /* Svart färg för att ge underrubriken mer fokus */
+    font-size: 14px; /* Mindre underrubrikstorlek */
+    margin: 3px 0;
+    color: #000;
     font-weight: bold;
 }
 
 .gallery-date {
-    font-size: 14px;
-    color: #666; /* Ljusare grå färg för datum */
-    margin: 3px 0;
-    font-style: italic; /* Kursiv stil för datumet */
-
+    font-size: 12px; /* Mindre datumtext */
+    color: #666;
+    margin: 2px 0;
+    font-style: italic;
 }
 
 /* Anpassning för mindre skärmar */
 @media (max-width: 768px) {
     .gallery-container {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Minskar kolumnstorleken */
     }
 
     .gallery-subtitle {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .gallery-date {
-        font-size: 12px;
+        font-size: 10px;
     }
 }
 
-
-
-
-
 /* Stil för linjen ovanför Vernissage-sektionen med extra utrymme */
 .section-divider {
-    width: 80%; /* Gör linjen smalare för att ge utrymme på båda sidor */
-    height: 1.5px;
-    background-color: #000; /* Svart linje */
-    margin: 40px auto; /* Centrerar linjen och ger utrymme ovanför och nedanför */
-    margin-left: 10%; /* Skapar utrymme till vänster */
-    margin-right: 10%; /* Skapar utrymme till höger */
+    width: 70%; /* Gör linjen smalare */
+    height: 1px; /* Minskar linjens höjd */
+    background-color: #000;
+    margin: 30px auto; /* Minskar utrymme ovanför och nedanför */
 }
 
-
-/* Footer ska alltid vara längst ner */
+/* Footer */
 footer {
     text-align: center;
-    padding: 20px;
-    font-size: 14px;
+    padding: 15px; /* Minskar padding i footern */
+    font-size: 12px; /* Mindre textstorlek */
     background-color: #fff;
     border-top: 1px solid #ddd;
     width: 100%;
     position: relative;
     bottom: 0;
 }
+
+/* Kontaktsektion */
+#contact-section {
+    max-width: 500px; /* Minskar maxbredden */
+    margin: 60px auto; /* Minskar avståndet ovanför och nedanför */
+    padding-left: 15px;  /* Mindre padding */
+    padding-right: 30px; /* Mindre padding */
+}
+
+h2 {
+    font-size: 24px; /* Mindre rubrikstorlek */
+    text-align: center;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+/* Kontaktinformation */
+.contact-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 14px; /* Mindre textstorlek */
+    color: #555;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    font-size: 14px; /* Mindre listtext */
+    margin-bottom: 8px;
+}
+
+/* Kontaktformulär */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 12px; /* Mindre etikettstorlek */
+    margin-bottom: 4px;
+    color: #555;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 14px; /* Mindre text i input */
+    padding: 8px; /* Mindre padding */
+    margin-bottom: 15px; /* Mindre mellanrum */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.contact-form button {
+    padding: 8px; /* Mindre knappstorlek */
+    font-size: 14px; /* Mindre textstorlek */
+    color: white;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
 
 /* Stil för modalen */
 .modal {
@@ -260,89 +323,7 @@ footer {
 
 
 
-/* Kontaktsektion */
-#contact-section {
-    max-width: 600px;
-    margin: 80px auto;
-    padding-left: 20px;  /* Extra utrymme till vänster */
-    padding-right: 40px; /* Extra utrymme till höger för att kompensera för menyn */
-}
 
-h2 {
-    font-size: 32px;
-    text-align: center;
-    margin-bottom: 40px;
-    color: #000;
-}
-
-/* Kontaktinformation */
-.contact-info {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.contact-info p {
-    margin-bottom: 20px;
-    font-size: 16px;
-    color: #555;
-}
-
-.contact-info ul {
-    list-style: none;
-    padding: 0;
-}
-
-.contact-info li {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.contact-info a {
-    color: #333;
-    text-decoration: none;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
-/* Kontaktformulär */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form label {
-    font-size: 14px;
-    margin-bottom: 5px;
-    color: #555;
-}
-
-.contact-form input, 
-.contact-form textarea {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 16px;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 100%;
-}
-
-.contact-form button {
-    padding: 10px;
-    font-size: 16px;
-    color: white;
-    background-color: black;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #555;
-}
 
 /* Responsiv design */
 @media (max-width: 768px) {
